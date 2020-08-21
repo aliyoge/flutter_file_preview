@@ -1,0 +1,43 @@
+group 'com.zzaning.flutter_file_preview'
+version '1.0'
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.0'
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 16
+    }
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+    dependencies {
+        api 'com.tencent.tbs.tbssdk:sdk:43903'
+        implementation 'androidx.appcompat:appcompat:1.2.0'
+        implementation 'androidx.annotation:annotation:1.1.0'
+        implementation 'pub.devrel:easypermissions:1.2.0'
+        implementation 'com.squareup.okio:okio:1.13.0'
+        implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+        implementation 'com.squareup.retrofit2:retrofit:2.1.0'
+        implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+    }
+}
