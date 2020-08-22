@@ -11,7 +11,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   @override
   void initState() {
     super.initState();
@@ -26,33 +25,43 @@ class _MyAppState extends State<MyApp> {
         ),
         body: new Column(
           children: <Widget>[
-            new Container(height: 20,),
+            new Container(
+              height: 20,
+            ),
             new FlatButton(
                 child: new Text("Open Debug"),
                 onPressed: () {
-                  FlutterFilePreview.openDebug();}),
-            new Container(height: 20,),
+                  FlutterFilePreview.openDebug();
+                }),
+            new Container(
+              height: 20,
+            ),
             new FlatButton(
                 child: new Text("Open Online Pdf"),
                 onPressed: () {
                   FlutterFilePreview.openFile(
-                      "http://www.wh.gov.cn/zwgk/szfgz/202003/P020191023546167721245.pdf", title: 'Online PDF');
+                      "https://github.com/aliyoge/flutter_file_preview/raw/master/test/docs/test_file_for.pdf",
+                      title: 'Online PDF');
                 }),
-            new Container(height: 20,),
+            new Container(
+              height: 20,
+            ),
             new FlatButton(
                 child: new Text("Open Online Docx"),
                 onPressed: () {
                   FlutterFilePreview.openFile(
-                      "http://www.wh.gov.cn/zwgk/szfxx/202003/P020191021421042777162.doc", title: 'Online Doc');
+                      "https://github.com/aliyoge/flutter_file_preview/blob/master/test/docs/test_file_for.docx",
+                      title: 'Online Docx');
                 }),
-            new Container(height: 20,),
+            new Container(
+              height: 20,
+            ),
             new FlatButton(
                 child: new Text("Open Online Xls"),
                 onPressed: () {
                   FlutterFilePreview.openFile(
-                      "http://www.bjrbj.gov.cn/csibiz/home/static/articles/catalog_118000/2017-12-14/article_ff808081583de24e0160543be5a10261/ff808081583de24e0160543be5a10264.xls",
-                    title: 'Online Xls'
-                  );
+                      "https://github.com/aliyoge/flutter_file_preview/blob/master/test/docs/test_file_for.xlsx?raw=true",
+                      title: 'Online Xls');
                 }),
           ],
         ),

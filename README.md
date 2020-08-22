@@ -25,7 +25,7 @@ file_preview:
 在文件中使用
 
 ```
-import 'package:file_preview/file_preview.dart';
+import 'package:flutter_file_preview/flutter_file_preview.dart';
 
 # 预览在线文件
 FlutterFilePreview.openFile("http://www.xxx.com/1245.pdf", title: 'Online PDF');
