@@ -15,4 +15,6 @@
     <style name="NormalTheme" parent="@android:style/Theme.Black.NoTitleBar">
         <item name="android:windowBackground">@android:color/white</item>
     </style>
+
+    <style name="AppCompatTheme" parent="Theme.AppCompat.Light.NoActionBar.FullScreen" />
 </resources>

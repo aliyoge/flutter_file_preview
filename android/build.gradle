@@ -25,10 +25,14 @@ android {
     compileSdkVersion 28
 
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 17
     }
     lintOptions {
         disable 'InvalidPackage'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
     dependencies {
         api 'com.tencent.tbs.tbssdk:sdk:43903'
@@ -39,5 +43,6 @@ android {
         implementation 'com.squareup.okhttp3:okhttp:3.10.0'
         implementation 'com.squareup.retrofit2:retrofit:2.1.0'
         implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+        api 'com.wuhenzhizao:titlebar:1.2.0'
     }
 }

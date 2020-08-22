@@ -1,4 +1,3 @@
 <resources>
-    <string name="app_name">FileView</string>
     <string name="storage_permission">需要访问手机存储权限</string>
 </resources>

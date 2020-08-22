@@ -33,7 +33,7 @@ android {
 
     defaultConfig {
         applicationId "com.zzaning.flutter_file_preview_example"
-        minSdkVersion 16
+        minSdkVersion 17
         targetSdkVersion 28
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName

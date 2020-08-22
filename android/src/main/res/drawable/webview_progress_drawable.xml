@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/progress">
+        <!--需要这样设置颜色，直接通过drawable设置颜色无效果-->
+        <clip>
+            <shape>
+                <solid android:color="@color/colorAccent"/>
+            </shape>
+
+        </clip>
+    </item>
+    <item android:id="@android:id/background">
+        <clip>
+            <shape>
+                <solid android:color="@color/colorPrimary"/>
+            </shape>
+
+        </clip>
+    </item>
+</layer-list>
