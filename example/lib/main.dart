@@ -40,7 +40,7 @@ class _MyAppState extends State<MyApp> {
                 child: new Text("Open Online Pdf"),
                 onPressed: () {
                   FlutterFilePreview.openFile(
-                      "https://github.com/aliyoge/flutter_file_preview/raw/master/test/docs/test_file_for.pdf",
+                      "https://gitee.com/kongkongss/flutter_file_preview/raw/master/test/docs/test_file_for.pdf",
                       title: 'Online PDF');
                 }),
             new Container(
@@ -50,7 +50,7 @@ class _MyAppState extends State<MyApp> {
                 child: new Text("Open Online Docx"),
                 onPressed: () {
                   FlutterFilePreview.openFile(
-                      "https://github.com/aliyoge/flutter_file_preview/blob/master/test/docs/test_file_for.docx",
+                      "https://gitee.com/kongkongss/flutter_file_preview/raw/master/test/docs/test_file_for.docx",
                       title: 'Online Docx');
                 }),
             new Container(
@@ -60,7 +60,7 @@ class _MyAppState extends State<MyApp> {
                 child: new Text("Open Online Xls"),
                 onPressed: () {
                   FlutterFilePreview.openFile(
-                      "https://github.com/aliyoge/flutter_file_preview/blob/master/test/docs/test_file_for.xlsx?raw=true",
+                      "https://gitee.com/kongkongss/flutter_file_preview/raw/master/test/docs/test_file_for.xlsx",
                       title: 'Online Xls');
                 }),
           ],

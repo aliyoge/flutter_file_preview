@@ -12,6 +12,8 @@ PDF, Word, Excel, and PowerPoint Viewer For Flutter App
 
 `iOS`使用的是原生`WKWebView`
 
+![demo](./screenshot/demo.gif)
+
 ## 使用方法
 
 pubspec.yaml中添加
