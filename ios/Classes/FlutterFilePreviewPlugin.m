@@ -24,6 +24,10 @@
     preview.url = path;
     preview.title = title != NULL ? title : @"文件预览";
     UINavigationController *navCtrl = [[UINavigationController alloc] initWithRootViewController:preview];
+    if (self.hostViewController == NULL) {
+      self.hostViewController = [UIApplication sharedApplication].delegate.window.rootViewController;
+    }
+    [navCtrl setModalPresentationStyle:UIModalPresentationFullScreen];
     [self.hostViewController presentViewController:navCtrl animated:YES completion:nil];
   } else if ([@"getPlatformVersion" isEqualToString:call.method]) {
     result([@"iOS " stringByAppendingString:[[UIDevice currentDevice] systemVersion]]);
