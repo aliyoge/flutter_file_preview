@@ -6,9 +6,10 @@
 //
 
 #import "FilePreviewVC.h"
+#import <QuickLook/QuickLook.h>
 
-@interface FilePreviewVC ()
-@property (nonatomic, strong) UIWebView *myWebView;
+@interface FilePreviewVC ()<QLPreviewControllerDataSource>
+@property (nonatomic, strong) QLPreviewController *previewVC;
 @end
 
 @implementation FilePreviewVC
@@ -20,15 +21,12 @@
     self.navigationItem.rightBarButtonItem = closeItem;
     self.navigationController.navigationBar.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
-    self.myWebView = [[UIWebView alloc] initWithFrame: CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    self.myWebView.scalesPageToFit = YES;//使文档的显示范围适合UIWebView的bounds
-    [self.view addSubview:self.myWebView];
-}
 
-- (void)viewWillAppear:(BOOL)animated {
-    NSURL *filePath = [NSURL URLWithString:self.url];
-    NSURLRequest *request = [NSURLRequest requestWithURL: filePath];
-    [self.myWebView loadRequest:request];
+    _previewVC = [[QLPreviewController alloc]init];
+    _previewVC.dataSource = self;
+    _previewVC.view.frame = self.view.frame;
+    [self addChildViewController:_previewVC];
+    [self.view addSubview:_previewVC.view];
 }
 
 - (void)close {
@@ -49,6 +47,14 @@
     if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
     statusBar.backgroundColor = color;
     }
+}
+
+- (NSInteger)numberOfPreviewItemsInPreviewController:(nonnull QLPreviewController *)controller {
+    return 1;
+}
+
+- (nonnull id<QLPreviewItem>)previewController:(nonnull QLPreviewController *)controller previewItemAtIndex:(NSInteger)index {
+    return [NSURL URLWithString:_url];
 }
 
 - (void)didReceiveMemoryWarning {
