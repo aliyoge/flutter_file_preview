@@ -1,6 +1,6 @@
 # flutter_file_preview
 
-PDF, Word, Excel, and PowerPoint Viewer For Flutter App
+Local AudioFile, PDF, Word, Excel, and PowerPoint Viewer For Flutter App
 
 ## Getting Started
 
