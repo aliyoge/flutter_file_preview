@@ -10,6 +10,7 @@
 
 @interface FilePreviewVC ()<QLPreviewControllerDataSource>
 @property (nonatomic, strong) QLPreviewController *previewVC;
+@property (nonatomic, strong) UIWebView *webView;
 @end
 
 @implementation FilePreviewVC
@@ -21,12 +22,38 @@
     self.navigationItem.rightBarButtonItem = closeItem;
     self.navigationController.navigationBar.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
-
+    ///用于适配文档文件
     _previewVC = [[QLPreviewController alloc]init];
     _previewVC.dataSource = self;
     _previewVC.view.frame = self.view.frame;
-    [self addChildViewController:_previewVC];
-    [self.view addSubview:_previewVC.view];
+    
+    ///用于适配音频文件
+    _webView = [[UIWebView alloc] initWithFrame: CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    _webView.scalesPageToFit = YES;//使文档的显示范围适合UIWebView的bounds
+    
+    if ([self isAudioBy:self.url]) {
+        [self.view addSubview:_webView];
+    }else{
+        [self addChildViewController:_previewVC];
+        [self.view addSubview:_previewVC.view];
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    NSURL *filePath = [NSURL URLWithString:self.url];
+    NSURLRequest *request = [NSURLRequest requestWithURL: filePath];
+    if ([self isAudioBy:self.url]) {
+        [_webView loadRequest:request];
+    }
+}
+
+- (BOOL)isAudioBy:(NSString*) url {
+    return [url containsString:@"mp3"]
+    || [url containsString:@"MP3"]
+    || [url containsString:@"mp4"]
+    || [url containsString:@"MP4"]
+    || [url containsString:@"wav"]
+    || [url containsString:@"WAV"];
 }
 
 - (void)close {

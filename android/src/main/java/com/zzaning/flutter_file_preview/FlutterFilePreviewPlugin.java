@@ -102,7 +102,14 @@ public class FlutterFilePreviewPlugin implements FlutterPlugin, MethodCallHandle
                 if (!EasyPermissions.hasPermissions(context, perms)) {
                     EasyPermissions.requestPermissions(activity, "需要访问手机存储权限", 10086, perms);
                 } else {
-                    FileDisplayActivity.show(context, filePath, true, title);
+                    boolean isOpenFile = true;
+                    if (filePath.endsWith(".mp3") || filePath.endsWith(".MP3") || filePath.endsWith("mp4") || filePath.endsWith("MP4")) {
+                        isOpenFile = false;
+                        if (!filePath.startsWith("file:")) {
+                            filePath = "file:///"+filePath;
+                        }
+                    }
+                    FileDisplayActivity.show(context, filePath, isOpenFile, title);
                 }
                 result.success("done");
                 break;
