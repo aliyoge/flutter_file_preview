@@ -22,7 +22,7 @@ class FlutterFilePreview {
   static Future<String> openDebug() async {
     String result = 'false';
     if (Platform.isAndroid) {
-      final String result = await _channel.invokeMethod('openDebug');
+      result = await _channel.invokeMethod('openDebug');
     }
     return result;
   }

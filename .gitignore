@@ -1,4 +1,5 @@
 .fvm
+.vscode
 
 # Miscellaneous
 *.class

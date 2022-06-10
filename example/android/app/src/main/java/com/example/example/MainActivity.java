@@ -1,4 +1,4 @@
-package com.zzaning.flutter_file_preview_example;
+package com.example.example;
 
 import io.flutter.embedding.android.FlutterActivity;
 
