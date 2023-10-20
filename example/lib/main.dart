@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp> {
             new Container(
               height: 20,
             ),
-            new FlatButton(
+            new ElevatedButton(
                 child: new Text("Open Debug"),
                 onPressed: () {
                   FlutterFilePreview.openDebug();
@@ -36,7 +36,7 @@ class _MyAppState extends State<MyApp> {
             new Container(
               height: 20,
             ),
-            new FlatButton(
+            new ElevatedButton(
                 child: new Text("Open Online Pdf"),
                 onPressed: () {
                   FlutterFilePreview.openFile(
@@ -46,7 +46,7 @@ class _MyAppState extends State<MyApp> {
             new Container(
               height: 20,
             ),
-            new FlatButton(
+            new ElevatedButton(
                 child: new Text("Open Online Docx"),
                 onPressed: () {
                   FlutterFilePreview.openFile(
@@ -56,7 +56,7 @@ class _MyAppState extends State<MyApp> {
             new Container(
               height: 20,
             ),
-            new FlatButton(
+            new ElevatedButton(
                 child: new Text("Open Online Xls"),
                 onPressed: () {
                   FlutterFilePreview.openFile(
